@@ -11,7 +11,7 @@ private:
 	size_t array_size_;
 	size_t count_;
 public:
-	Stack() noexcept : Stack(8) {}
+	Stack() noexcept : array_size_(8), array_(new T[array_size_]), count_(0) {}
 	Stack(size_t max_el) noexcept : array_size_(max_el), array_(new T[max_el]), count_(0) {}
 
 	Stack(const Stack& s) noexcept {
