@@ -36,35 +36,29 @@ public:
 		s.array_ = nullptr;
 	}
 
-	auto operator=(const Stack& s) noexcept {
-		if (this == &s)
-			return *this;
-		else
-		{
-			delete[] array_;
-			array_size_ = s.array_size_;
-			count_ = s.count_;
-			array_ = new T[s.array_size_];
-			for (size_t i = 0; i < s.array_size_; ++i)
-			{
-				array_[i] = s.array_[i];
-			}
-			return *this;
-		}
-	}
-
-	auto operator=(const Stack&& s)
-	{
-		if (this == &s)
-			return *this;
-
-		array_size_ = s.array_size_;
-		array_ = s.array_;
-		s.array_ = nullptr;
-
-		return *this;
-	}
-
+	Stack<T>& operator=(const Stack& s) noexcept{
+      		if(this == &s) return *this;
+      		else {
+        		delete[] array_;
+        		array_size_ = s.array_size_;
+        		count_ = s.count_;
+        		array_ = new T[s.array_size_];
+        		for(size_t i = 0; i < s.array_size_; ++i) {
+         	 array_[i] = s.array_[i];
+        	}
+        	return *this;
+      }
+    }
+  
+    	Stack<T>& operator=(Stack&& s) noexcept{
+      		array_size_ = s.array_size_;
+      		count_ = s.count_;
+      		array_ = s.array_;
+      		s.array_size_ = 0;
+      		s.count_ = 0;
+      		s.array_ = nullptr;
+      		return *this;
+    }
 	size_t count() const noexcept {
 		return count_;
 	}
@@ -105,5 +99,7 @@ public:
 		return array_[ij];
 	}
 };
+
+
 
 #endif
