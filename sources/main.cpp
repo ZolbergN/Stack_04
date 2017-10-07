@@ -3,7 +3,7 @@
 
 int main() {
 	try {
-		Stack<int> st(9);
+		Stack<int> st(8);
 
 		st.push(2);
 		st.push(4);
