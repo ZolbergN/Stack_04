@@ -19,3 +19,7 @@ void pop_ex() {
 		cout << e.what() << endl;
 	}
 }
+
+int main() {
+	pop_ex();
+}
