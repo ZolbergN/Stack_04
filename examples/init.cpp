@@ -13,6 +13,5 @@ void init_ex() {
 }
 
 int main() {
-init_ex();
-return 0;
+	init_ex();
 }
