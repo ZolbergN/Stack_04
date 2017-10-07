@@ -1,3 +1,6 @@
+#ifndef STACK_HPP
+#define STACK_HPP
+
 #include <iostream> 
 #include <string> 
 #include <stdexcept> 
@@ -102,3 +105,5 @@ public:
 		return array_[ij];
 	}
 };
+
+#endif
