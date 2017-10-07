@@ -1,3 +1,6 @@
+#include <iostream>
+#include "Stack.hpp"
+
 int main() {
 	try {
 		Stack<int> st(10);
@@ -22,7 +25,6 @@ int main() {
 	catch (const exception& e) {
 		cout << e.what() << endl;
 	}
-
-	system("pause");
+	
 	return 0;
 }
