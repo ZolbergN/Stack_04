@@ -81,7 +81,7 @@ public:
 		array_[count_++] = value;
 	}
 
-	T pop() {
+	T& pop() {
         if (count_ == 0){
             throw runtime_error( "Ошибка при удалении элемента: стек пуст" );
         }
