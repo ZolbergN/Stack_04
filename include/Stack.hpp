@@ -81,9 +81,13 @@ public:
 		array_[count_++] = value;
 	}
 
-	T& top() const noexcept {
-		return array_[count_];
-	}
+	T pop() {
+        if (count_ == 0){
+            throw runtime_error( "Ошибка при удалении элемента: стек пуст" );
+        }
+        --count_;
+        return array_[count_];
+    }
 
 	void pop() noexcept {
 		if (count_ == 0) domain_error{ "ERROR —- STACK EMPTY" };
