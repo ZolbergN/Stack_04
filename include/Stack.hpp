@@ -81,11 +81,11 @@ public:
 		array_[count_++] = value;
 	}
 
-	T pop() noexcept{
+	T& pop() noexcept{
         if (count_ == 0) {
-            throw runtime_error("---Stack is empty---"); //Пуск исключения
+            throw runtime_error("ERROR --- Stack is empty");
         }
-        --count_; //Снижение счетчика на единицу
+        --count_;
         return top();
     };
 	
