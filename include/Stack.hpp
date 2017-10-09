@@ -86,12 +86,7 @@ public:
 	--count_;
 		return top();
 	}
-
-	void pop() noexcept {
-		if (count_ == 0) domain_error{ "ERROR —- STACK EMPTY" };
-	--count_;
-	}
-
+	
 	~Stack() noexcept {
 		delete[] array_;
 	}
