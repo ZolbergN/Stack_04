@@ -85,10 +85,9 @@ public:
 		return array_[count_];
 	}
 
-	T& pop() noexcept {
+	void pop() noexcept {
 		if (count_ == 0) domain_error{ "ERROR —- STACK EMPTY" };
 	--count_;
-		return top();
 	}
 
 	~Stack() noexcept {
