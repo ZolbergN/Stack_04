@@ -84,12 +84,13 @@ public:
 		return array_[count_];
 	}
 
-	void pop() noexcept{
+	 T pop() noexcept{
         if (count_ == 0) {
             throw runtime_error("ERROR --- Stack is empty");
         }
         --count_;
-    };
+        return top();
+    }
 	
 	~Stack() noexcept {
 		delete[] array_;
