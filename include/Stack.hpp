@@ -80,13 +80,15 @@ public:
 		}
 		array_[count_++] = value;
 	}
+	T& top() const noexcept {
+		return array_[count_];
+	}
 
-	T& pop() noexcept{
+	void pop() noexcept{
         if (count_ == 0) {
             throw runtime_error("ERROR --- Stack is empty");
         }
         --count_;
-        return top();
     };
 	
 	~Stack() noexcept {
