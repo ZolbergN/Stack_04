@@ -17,13 +17,10 @@ public:
 	Stack() noexcept : array_size_(8), array_(new T[array_size_]), count_(0) {}
 	Stack(size_t max_el) noexcept : array_size_(max_el), array_(new T[max_el]), count_(0) {}
 
-	Stack(const Stack& s) noexcept :   array_size_{s.array_size_},
-                        count_{s.count_},
-                        array_ {new T[array_size_]}
-    {
-        copy(s.array_, s.array_ + array_size_, array_);
-    }
-
+	Stack(const Stack& s) noexcept :   array_size_{s.array_size_}, array_ {new T[array_size_]}, count_{s.count_} {
+		copy(s.array_, s.array_ + array_size_, array_);
+	}
+	
 	Stack(Stack&& s) noexcept : array_size_(s.array_size_), count_(s.count_), array_(s.array_) {
 
 		s.array_size_ = 0;
