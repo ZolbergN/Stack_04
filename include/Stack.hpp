@@ -79,7 +79,7 @@ public:
 
 	void pop() noexcept{
         if (count_ == 0){
-            throw runtime_error( "ERROR --- Stack empty" );
+            throw runtime_error{ "ERROR --- Stack empty" };
         }
         	--count_;
     	}
