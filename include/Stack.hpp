@@ -77,10 +77,11 @@ public:
 		return array_[count_];
 	}
 
-	T& pop() noexcept {
-		if (count_ == 0) domain_error{ "ERROR —- STACK EMPTY" };
-	--count_;
-		return top();
+	void pop() noexcept{
+        if (count_ == 0) {
+            throw runtime_error( "ERROR --- Stack empty" );
+	}
+		--count_;
 	}
 
 	~Stack() noexcept {
