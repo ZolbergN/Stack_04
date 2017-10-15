@@ -17,17 +17,10 @@ public:
 	Stack() noexcept : array_size_(8), array_(new T[array_size_]), count_(0) {}
 	Stack(size_t max_el) noexcept : array_size_(max_el), array_(new T[max_el]), count_(0) {}
 
-	Stack(const Stack& s) noexcept {
-		if (this != &s) {
-			delete[] array_;
-			array_size_ = s.array_size_;
-			count_ = s.count_;
-			array_ = new T[s.array_size_];
-			for (size_t i = 0; i < s.array_size_; ++i) {
-				array_[i] = s.array_[i];
-			}
-		}
-	}
+	Stack(const Stack& s) noexcept :   array_size_{S.array_size_}, count_{S.count_}, array_ {new T[array_size_]}
+    {
+        copy(s.array_, s.array_ + array_size_, array_);
+    }
 
 	Stack(Stack&& s) noexcept : array_size_(s.array_size_), count_(s.count_), array_(s.array_) {
 
@@ -37,17 +30,10 @@ public:
 	}
 
 	Stack<T>& operator=(const Stack& s) noexcept{
-      		if(this == &s) return *this;
-      		else {
-        		delete[] array_;
-        		array_size_ = s.array_size_;
-        		count_ = s.count_;
-        		array_ = new T[s.array_size_];
-        		for(size_t i = 0; i < s.array_size_; ++i) {
-         	 array_[i] = s.array_[i];
-        	}
-        	return *this;
-      }
+      		if(this != &s){
+            Stack{ s }.swap(*this);
+        }
+        return *this;
     }
   
     	Stack<T>& operator=(Stack&& s) noexcept{
@@ -84,12 +70,11 @@ public:
 		return array_[count_];
 	}
 
-	 T pop() noexcept{
-        if (count_ == 0) {
-            throw runtime_error{"ERROR --- Stack is empty"};
+	void pop() noexcept{
+        if (count_ == 0){
+            throw runtime_error( "ERROR --- Stack empty" );
         }
         --count_;
-        return top();
     }
 	
 	~Stack() noexcept {
