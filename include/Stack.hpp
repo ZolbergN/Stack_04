@@ -81,19 +81,6 @@ public:
             if(count_ == 0) throw std::logic_error("Error");
             --count_;
         }
-	
-	friend auto operator<<(ostream& os, const Stack& s) -> ostream& {
-        if (s.array_ == nullptr) {
-            os << "empty";
-        } else {
-            os << "{";
-            for (size_t i = 0; i < s.count_; ++i) {
-                os <<  " " <<  s.array_[i];
-            }
-            os << " " << "}";
-        }
-        return os;
-    }
 
 	~Stack() noexcept {
 		delete[] array_;
