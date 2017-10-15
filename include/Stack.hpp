@@ -37,13 +37,10 @@ public:
     }
   
     	Stack<T>& operator=(Stack&& s) noexcept{
-      		array_size_ = s.array_size_;
-      		count_ = s.count_;
-      		array_ = s.array_;
-      		s.array_size_ = 0;
-      		s.count_ = 0;
-      		s.array_ = nullptr;
-      		return *this;
+      		if(this != &s){
+            Stack{ std::move(s) }.swap(*this);
+        }
+        return *this;
     }
 	size_t count() const noexcept {
 		return count_;
