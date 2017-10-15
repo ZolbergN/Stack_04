@@ -77,11 +77,10 @@ public:
 		return array_[count_];
 	}
 
-	T& pop() noexcept {
-		if (count_ == 0) domain_error{ "ERROR —- STACK EMPTY" };
-	--count_;
-		return top();
-	}
+	void pop() noexcept {
+            if(count_ == 0) throw std::logic_error("Error");
+            --count_;
+        }
 	
 	friend auto operator<<(ostream& os, const Stack& s) -> ostream& {
         if (s.array_ == nullptr) {
