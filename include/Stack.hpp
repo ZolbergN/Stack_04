@@ -91,9 +91,9 @@ public:
             for (size_t i = 0; i < s.count_; ++i) {
                 os <<  " " <<  s.array_[i];
             }
-            out << " " << "}";
+            os << " " << "}";
         }
-        return out;
+        return os;
     }
 
 	~Stack() noexcept {
