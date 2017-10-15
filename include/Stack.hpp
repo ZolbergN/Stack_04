@@ -83,6 +83,19 @@ public:
         }
         	--count_;
     	}
+	
+	friend auto operator<<(ostream& os, const Stack& s) -> ostream& {
+        if (s.array_ == nullptr) {
+            os << "empty";
+        } else {
+            os << "{";
+            for (size_t i = 0; i < s.count_; ++i) {
+                os <<  " " <<  s.array_[i];
+            }
+            out << " " << "}";
+        }
+        return out;
+    }
 
 	~Stack() noexcept {
 		delete[] array_;
