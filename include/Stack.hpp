@@ -27,6 +27,10 @@ public:
 		s.count_ = 0;
 		s.array_ = nullptr;
 	}
+	
+	Stack(initializer_list<T> i) noexcept : array_size_(i.size()), array_(new T[i.size()]), count_(i.size()) {
+            std::copy(i.begin(), i.end(), array_);
+        }
 
 	Stack<T>& operator=(const Stack& s) noexcept{
       		if(this == &s) return *this;
