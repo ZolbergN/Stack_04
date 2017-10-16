@@ -13,9 +13,7 @@ void empty_ex() {
 		for (int i = 0; i < sizeof(cet); i++) { arr_.push(cet[i]); }
 
 		cout << "RESULT ";
-		while (!arr_.empty()) {
-			cout << arr_.pop() << " ";
-		}
+		while (!arr_.empty()) {}
 		cout << endl << endl;
 	}
 	catch (const std::exception& e) {
