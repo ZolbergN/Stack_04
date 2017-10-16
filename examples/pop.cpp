@@ -11,9 +11,6 @@ void pop_ex() {
 
 		cout << "RESULT ";
 
-		for (int j = 0; j < 4; j++) { cout << Double_arr.pop() << " "; }
-		cout << endl << endl;
-
 	}
 	catch (const std::exception& e) {
 		cout << e.what() << endl;
