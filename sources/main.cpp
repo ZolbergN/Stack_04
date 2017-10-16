@@ -13,12 +13,6 @@ int main() {
 		st.push(766);
 		st.push(9);
 		st.push(32);
-
-		for (int i = 0; i < 8; i++) {
-			cout << st.pop() << endl;
-		}
-		cout << endl;
-
 	}
 	catch (const exception& e) {
 		cout << e.what() << endl;
