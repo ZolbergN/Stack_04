@@ -30,6 +30,6 @@ TEST_CASE("Check functions", "[stack]") {
     Stack<int> st;
     st.push(3);
     st.push(4);
-    REQUIIRE(st.count() == 2);
+    REQUIRE(st.count() == 2);
   }
 }
