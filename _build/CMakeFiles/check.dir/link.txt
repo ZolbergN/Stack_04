@@ -1,0 +1,1 @@
+/usr/bin/c++.exe    -Wl,--enable-auto-import CMakeFiles/check.dir/tests/main.cpp.o CMakeFiles/check.dir/tests/test.cpp.o  -o check.exe -Wl,--out-implib,libcheck.dll.a -Wl,--major-image-version,0,--minor-image-version,0  
