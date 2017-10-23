@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ZolbergN/STACK_03.svg?branch=master)](https://travis-ci.org/ZolbergN/STACK_03)
+[![Build Status](https://travis-ci.org/ZolbergN/Stack_04.svg?branch=master)](https://travis-ci.org/ZolbergN/Stack_04)
 ## Homework III (Stack)
 
 ## Tasks
