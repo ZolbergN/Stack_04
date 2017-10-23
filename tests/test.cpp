@@ -14,7 +14,7 @@ TEST_CASE("Check functions", "[stack]") {
     st.push(4);
     st.pop();
     st.pop();
-    REQUIRE(st.count() == 1);
+    REQUIRE(st.count() == 0);
   }
   SECTION("Check EMPTY")
   {
